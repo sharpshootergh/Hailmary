@@ -1,5 +1,6 @@
-FROM node
-COPY ./src/. /app
+FROM node:latest 
 WORKDIR /app
+COPY ./src/. .
+ENV PORT=8080
 RUN npm install
-RUN npm start
+ENTRYPOINT [ "npm" start ]
